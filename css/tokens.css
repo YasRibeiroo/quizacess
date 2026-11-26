@@ -1,0 +1,23 @@
+:root {
+  /* Tema Padrão (Contraste >= 4.5:1) */
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --primary-color: #005fcc;
+  --primary-text: #ffffff;
+  --border-color: #595959;
+  --focus-outline: #d93800;
+
+  /* Acessibilidade tátil e espaçamento (RNF03) */
+  --touch-target-min: 48px;
+  --spacing-gap: 12px;
+}
+
+[data-theme="high-contrast"] {
+  /* Tema Alto Contraste (Contraste >= 7:1) */
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --primary-color: #ffff00;
+  --primary-text: #000000;
+  --border-color: #ffffff;
+  --focus-outline: #00ffff;
+}

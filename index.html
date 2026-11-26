@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizAccess — Quiz Mobile Acessível</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+  <!-- Regiões de anúncio para leitores de tela (devem existir no DOM desde o início) -->
+  <div id="live-polite" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="live-assertive" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+
+  <header>
+    <button type="button" id="btn-contrast" aria-pressed="false">Alto Contraste</button>
+  </header>
+
+  <main id="app">
+    <!-- TELA 1: CONFIGURAÇÃO -->
+    <section id="screen-config" data-screen="CONFIG">
+      <h1 tabindex="-1">Configurar Partida — QuizAccess</h1>
+      <form id="form-config">
+        <label for="input-nickname">Seu apelido:</label>
+        <input type="text" id="input-nickname" required placeholder="Ex: Maria">
+
+        <fieldset>
+          <legend>Modo de tempo:</legend>
+          <label><input type="radio" name="timeMode" value="standard" checked> Padrão (20s)</label>
+          <label><input type="radio" name="timeMode" value="extended"> Estendido 2x (40s)</label>
+          <label><input type="radio" name="timeMode" value="unlimited"> Sem limite</label>
+        </fieldset>
+
+        <button type="submit" class="btn-primary">Começar</button>
+      </form>
+    </section>
+
+    <!-- As demais telas (LOBBY, QUESTÃO, FEEDBACK, PÓDIO) entrarão aqui -->
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
