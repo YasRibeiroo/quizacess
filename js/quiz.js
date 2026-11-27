@@ -1,3 +1,5 @@
+import { announce } from './a11y.js';
+
 export async function loadAndValidateQuiz(url = './data/quiz.json') {
   const response = await fetch(url);
   if (!response.ok) {
@@ -55,6 +57,129 @@ export function validateQuizData(data) {
       }
     });
   });
+}
 
-  console.info(`✅ Validação concluída com sucesso: ${data.questions.length} questões carregadas.`);
+// --- Lógica da Partida (Etapa E4) ---
+export class QuizEngine {
+  constructor(questions) {
+    this.questions = questions;
+    this.currentIndex = 0;
+    this.score = 0;
+    this.correctCount = 0;
+    this.timeMode = 'standard';
+    this.maxTime = 20;
+    this.remainingTime = 20;
+    this.timerId = null;
+    this.answered = false;
+  }
+
+  startNewMatch(timeMode) {
+    this.currentIndex = 0;
+    this.score = 0;
+    this.correctCount = 0;
+    this.timeMode = timeMode;
+    this.answered = false;
+    this.stopTimer();
+  }
+
+  getCurrentQuestion() {
+    return this.questions[this.currentIndex];
+  }
+
+  hasNextQuestion() {
+    return this.currentIndex + 1 < this.questions.length;
+  }
+
+  advanceQuestion() {
+    this.currentIndex += 1;
+  }
+
+  startTimer({ onTick, onTimeout }) {
+    this.stopTimer();
+    this.answered = false;
+
+    if (this.timeMode === 'unlimited') {
+      this.maxTime = null;
+      this.remainingTime = null;
+      onTick(null);
+      return;
+    }
+
+    this.maxTime = this.timeMode === 'extended' ? 40 : 20;
+    this.remainingTime = this.maxTime;
+    onTick(this.remainingTime);
+
+    this.timerId = setInterval(() => {
+      this.remainingTime -= 1;
+      onTick(this.remainingTime);
+
+      // Marcos de tempo anunciados de forma polite (Seção 6)
+      if (this.remainingTime === 10) {
+        announce('10 segundos restantes.', 'polite');
+      } else if (this.remainingTime === 5) {
+        announce('5 segundos restantes.', 'polite');
+      }
+
+      if (this.remainingTime <= 0) {
+        this.stopTimer();
+        if (!this.answered) {
+          this.answered = true;
+          onTimeout();
+        }
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    if (this.timerId) {
+      clearInterval(this.timerId);
+      this.timerId = null;
+    }
+  }
+
+  submitAnswer(optionIndex) {
+    if (this.answered) return null;
+    this.answered = true;
+    this.stopTimer();
+
+    const question = this.getCurrentQuestion();
+    const chosen = question.options[optionIndex];
+    const correctOption = question.options.find((o) => o.isCorrect);
+    const isCorrect = Boolean(chosen && chosen.isCorrect);
+
+    let pointsEarned = 0;
+    if (isCorrect) {
+      this.correctCount += 1;
+      pointsEarned = 100;
+
+      // Bônus de velocidade (até +50) somente no modo Padrão (Seção 8)
+      if (this.timeMode === 'standard' && this.maxTime > 0) {
+        const speedBonus = Math.round((this.remainingTime / this.maxTime) * 50);
+        pointsEarned += speedBonus;
+      }
+
+      this.score += pointsEarned;
+    }
+
+    return {
+      isCorrect,
+      timedOut: false,
+      pointsEarned,
+      totalScore: this.score,
+      correctOption
+    };
+  }
+
+  handleTimeout() {
+    const question = this.getCurrentQuestion();
+    const correctOption = question.options.find((o) => o.isCorrect);
+
+    return {
+      isCorrect: false,
+      timedOut: true,
+      pointsEarned: 0,
+      totalScore: this.score,
+      correctOption
+    };
+  }
 }
