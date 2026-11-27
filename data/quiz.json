@@ -1,172 +1,125 @@
 {
-  "quizId": "mobile-a11y-2026",
-  "title": "Acessibilidade no Desenvolvimento Mobile",
+  "title": "QuizAccess — Fundamentos de Acessibilidade Digital (WCAG 2.2)",
   "questions": [
     {
-      "id": 1,
-      "prompt": "Qual critério da WCAG 2.2 exige contraste mínimo de 4.5:1 para texto normal?",
-      "speechPrompt": "Questão 1. Qual critério da W C A G 2 ponto 2 exige contraste mínimo de 4 vírgula 5 para 1 para texto normal?",
+      "id": "q1",
+      "prompt": "Qual é a razão de contraste mínima exigida pelo nível AA da WCAG 2.2 para textos de tamanho normal?",
+      "speechPrompt": "Questão 1. Qual é a razão de contraste mínima exigida pelo nível AA da WCAG 2.2 para textos de tamanho normal?",
       "options": [
-        {
-          "key": "A",
-          "shape": "triangle",
-          "text": "1.4.3 — Contraste Mínimo (AA)",
-          "speechText": "Opção A: critério 1 ponto 4 ponto 3, Contraste Mínimo, nível duplo A",
-          "isCorrect": true
-        },
-        {
-          "key": "B",
-          "shape": "diamond",
-          "text": "2.1.1 — Teclado",
-          "speechText": "Opção B: critério 2 ponto 1 ponto 1, Teclado",
-          "isCorrect": false
-        },
-        {
-          "key": "C",
-          "shape": "circle",
-          "text": "2.2.1 — Tempo Ajustável",
-          "speechText": "Opção C: critério 2 ponto 2 ponto 1, Tempo Ajustável",
-          "isCorrect": false
-        },
-        {
-          "key": "D",
-          "shape": "square",
-          "text": "3.1.1 — Idioma da Página",
-          "speechText": "Opção D: critério 3 ponto 1 ponto 1, Idioma da Página",
-          "isCorrect": false
-        }
-      ]
+        { "key": "A", "shape": "triangle", "text": "3,0 para 1", "speechText": "Opção A: 3 vírgula 0 para 1" },
+        { "key": "B", "shape": "diamond", "text": "4,5 para 1", "speechText": "Opção B: 4 vírgula 5 para 1" },
+        { "key": "C", "shape": "circle", "text": "7,0 para 1", "speechText": "Opção C: 7 vírgula 0 para 1" },
+        { "key": "D", "shape": "square", "text": "2,5 para 1", "speechText": "Opção D: 2 vírgula 5 para 1" }
+      ],
+      "correctIndex": 1
     },
     {
-      "id": 2,
-      "prompt": "Por que alternativas de quiz não devem depender apenas de cores para serem diferenciadas?",
-      "speechPrompt": "Questão 2. Por que alternativas de quiz não devem depender apenas de cores para serem diferenciadas?",
+      "id": "q2",
+      "prompt": "Qual é o tamanho mínimo recomendado para alvos de toque (botões e links) na WCAG 2.2 Nível AA?",
+      "speechPrompt": "Questão 2. Qual é o tamanho mínimo recomendado para alvos de toque, como botões e links, na WCAG 2.2 Nível AA?",
       "options": [
-        {
-          "key": "A",
-          "shape": "triangle",
-          "text": "Porque telas OLED não exibem cores primárias corretamente",
-          "speechText": "Opção A: Porque telas OLED não exibem cores primárias corretamente",
-          "isCorrect": false
-        },
-        {
-          "key": "B",
-          "shape": "diamond",
-          "text": "Para atender pessoas com daltonismo e baixa visão (WCAG 1.4.1)",
-          "speechText": "Opção B: Para atender pessoas com daltonismo e baixa visão, critério W C A G 1 ponto 4 ponto 1",
-          "isCorrect": true
-        },
-        {
-          "key": "C",
-          "shape": "circle",
-          "text": "Porque leitores de tela leem apenas o código hexadecimal da cor",
-          "speechText": "Opção C: Porque leitores de tela leem apenas o código hexadecimal da cor",
-          "isCorrect": false
-        },
-        {
-          "key": "D",
-          "shape": "square",
-          "text": "Para economizar bateria em dispositivos móveis Android e iOS",
-          "speechText": "Opção D: Para economizar bateria em dispositivos móveis Android e i O S",
-          "isCorrect": false
-        }
-      ]
+        { "key": "A", "shape": "triangle", "text": "16 por 16 pixels", "speechText": "Opção A: 16 por 16 pixels" },
+        { "key": "B", "shape": "diamond", "text": "24 por 24 pixels", "speechText": "Opção B: 24 por 24 pixels" },
+        { "key": "C", "shape": "circle", "text": "32 por 32 pixels", "speechText": "Opção C: 32 por 32 pixels" },
+        { "key": "D", "shape": "square", "text": "48 por 48 pixels", "speechText": "Opção D: 48 por 48 pixels" }
+      ],
+      "correctIndex": 1
     },
     {
-      "id": 3,
-      "prompt": "Qual tamanho mínimo de alvo de toque é recomendado para botões móveis acessíveis?",
-      "speechPrompt": "Questão 3. Qual tamanho mínimo de alvo de toque é recomendado para botões móveis acessíveis?",
+      "id": "q3",
+      "prompt": "Qual atributo HTML informa leitores de tela sobre atualizações dinâmicas na página sem mover o foco do teclado?",
+      "speechPrompt": "Questão 3. Qual atributo HTML informa leitores de tela sobre atualizações dinâmicas na página sem mover o foco do teclado?",
       "options": [
-        {
-          "key": "A",
-          "shape": "triangle",
-          "text": "16 por 16 pixels sem espaçamento",
-          "speechText": "Opção A: 16 por 16 pixels sem espaçamento",
-          "isCorrect": false
-        },
-        {
-          "key": "B",
-          "shape": "diamond",
-          "text": "20 por 20 pixels apenas no modo paisagem",
-          "speechText": "Opção B: 20 por 20 pixels apenas no modo paisagem",
-          "isCorrect": false
-        },
-        {
-          "key": "C",
-          "shape": "circle",
-          "text": "Pelo menos 48 por 48 pixels com espaçamento adequado",
-          "speechText": "Opção C: Pelo menos 48 por 48 pixels com espaçamento adequado",
-          "isCorrect": true
-        },
-        {
-          "key": "D",
-          "shape": "square",
-          "text": "100 por 100 pixels ocupando toda a largura da tela",
-          "speechText": "Opção D: 100 por 100 pixels ocupando toda a largura da tela",
-          "isCorrect": false
-        }
-      ]
+        { "key": "A", "shape": "triangle", "text": "aria-hidden", "speechText": "Opção A: aria hífen hidden" },
+        { "key": "B", "shape": "diamond", "text": "aria-label", "speechText": "Opção B: aria hífen label" },
+        { "key": "C", "shape": "circle", "text": "aria-live", "speechText": "Opção C: aria hífen live" },
+        { "key": "D", "shape": "square", "text": "tabindex", "speechText": "Opção D: tabindex" }
+      ],
+      "correctIndex": 2
     },
     {
-      "id": 4,
-      "prompt": "Como regiões dinâmicas de feedback (live regions) devem ser preparadas no HTML para leitores de tela?",
-      "speechPrompt": "Questão 4. Como regiões dinâmicas de feedback, chamadas live regions, devem ser preparadas no H T M L para leitores de tela?",
+      "id": "q4",
+      "prompt": "Por que não devemos depender apenas da cor para indicar se uma resposta está certa ou errada?",
+      "speechPrompt": "Questão 4. Por que não devemos depender apenas da cor para indicar se uma resposta está certa ou errada?",
       "options": [
-        {
-          "key": "A",
-          "shape": "triangle",
-          "text": "Criadas via JavaScript somente no instante em que o erro ocorre",
-          "speechText": "Opção A: Criadas via JavaScript somente no instante em que o erro ocorre",
-          "isCorrect": false
-        },
-        {
-          "key": "B",
-          "shape": "diamond",
-          "text": "Ocultadas com display: none até o momento da leitura",
-          "speechText": "Opção B: Ocultadas com display none até o momento da leitura",
-          "isCorrect": false
-        },
-        {
-          "key": "C",
-          "shape": "circle",
-          "text": "Inseridas dentro da tag head com atributo aria-hidden",
-          "speechText": "Opção C: Inseridas dentro da tag head com atributo aria-hidden",
-          "isCorrect": false
-        },
-        {
-          "key": "D",
-          "shape": "square",
-          "text": "Existir no DOM desde o carregamento inicial, inicialmente vazias",
-          "speechText": "Opção D: Existir no DOM desde o carregamento inicial, inicialmente vazias",
-          "isCorrect": true
-        }
-      ]
+        { "key": "A", "shape": "triangle", "text": "Porque navegadores antigos não carregam cores CSS", "speechText": "Opção A: Porque navegadores antigos não carregam cores CSS" },
+        { "key": "B", "shape": "diamond", "text": "Porque pessoas com daltonismo ou leitores de tela não distinguem apenas a cor", "speechText": "Opção B: Porque pessoas com daltonismo ou leitores de tela não distinguem apenas a cor" },
+        { "key": "C", "shape": "circle", "text": "Porque cores aumentam o consumo de bateria", "speechText": "Opção C: Porque cores aumentam o consumo de bateria" },
+        { "key": "D", "shape": "square", "text": "Porque o HTML5 proíbe o uso de verde e vermelho juntos", "speechText": "Opção D: Porque o HTML5 proíbe o uso de verde e vermelho juntos" }
+      ],
+      "correctIndex": 1
     },
     {
-      "id": 5,
-      "prompt": "O que o critério WCAG 2.1.4 exige sobre atalhos de teclado de caractere único (como teclas 1 a 4)?",
-      "speechPrompt": "Questão 5. O que o critério W C A G 2 ponto 1 ponto 4 exige sobre atalhos de teclado de caractere único, como teclas 1 a 4?",
+      "id": "q5",
+      "prompt": "Qual consulta de mídia CSS detecta quando o usuário prefere menos animações e movimentos na tela?",
+      "speechPrompt": "Questão 5. Qual consulta de mídia CSS detecta quando o usuário prefere menos animações e movimentos na tela?",
       "options": [
-        {
-          "key": "A",
-          "shape": "triangle",
-          "text": "Que possam ser desligados ou fiquem ativos apenas quando o componente tem foco",
-          "speechText": "Opção A: Que possam ser desligados ou fiquem ativos apenas quando o componente tem foco",
-          "isCorrect": true
-        },
-        {
-          "key": "B",
-          "shape": "diamond",
-          "text": "Que funcionem globalmente em qualquer campo de texto da página",
-          "speechText": "Opção B: Que funcionem globalmente em qualquer campo de texto da página",
-          "isCorrect": false
-        },
-        {
-          "key": "C",
-          "shape": "circle",
-          "text": "Que sejam ativados automaticamente sem ação do usuário",
-          "speechText": "Opção C: Que sejam ativados automaticamente sem ação do usuário",
-          "isCorrect": false
-        },
-        {
-          "key
+        { "key": "A", "shape": "triangle", "text": "prefers-color-scheme", "speechText": "Opção A: prefers hífen color hífen scheme" },
+        { "key": "B", "shape": "diamond", "text": "prefers-contrast", "speechText": "Opção B: prefers hífen contrast" },
+        { "key": "C", "shape": "circle", "text": "prefers-reduced-motion", "speechText": "Opção C: prefers hífen reduced hífen motion" },
+        { "key": "D", "shape": "square", "text": "prefers-static-ui", "speechText": "Opção D: prefers hífen static hífen UI" }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "q6",
+      "prompt": "Qual elemento HTML nativo deve ser usado para ações clicáveis que não mudam a URL da página?",
+      "speechPrompt": "Questão 6. Qual elemento HTML nativo deve ser usado para ações clicáveis que não mudam a URL da página?",
+      "options": [
+        { "key": "A", "shape": "triangle", "text": "div com onclick", "speechText": "Opção A: div com onclick" },
+        { "key": "B", "shape": "diamond", "text": "span", "speechText": "Opção B: span" },
+        { "key": "C", "shape": "circle", "text": "button", "speechText": "Opção C: button" },
+        { "key": "D", "shape": "square", "text": "a sem href", "speechText": "Opção D: tag a sem href" }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "q7",
+      "prompt": "O que significa o critério de Foco Visível na navegação por teclado?",
+      "speechPrompt": "Questão 7. O que significa o critério de Foco Visível na navegação por teclado?",
+      "options": [
+        { "key": "A", "shape": "triangle", "text": "Remover o contorno outline de todos os botões", "speechText": "Opção A: Remover o contorno outline de todos os botões" },
+        { "key": "B", "shape": "diamond", "text": "Mostrar um indicador visual claro em qual elemento o cursor do teclado está", "speechText": "Opção B: Mostrar um indicador visual claro em qual elemento o cursor do teclado está" },
+        { "key": "C", "shape": "circle", "text": "Ampliar a fonte do site em 300% automaticamente", "speechText": "Opção C: Ampliar a fonte do site em 300 por cento automaticamente" },
+        { "key": "D", "shape": "square", "text": "Bloquear o uso do mouse na página", "speechText": "Opção D: Bloquear o uso do mouse na página" }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "q8",
+      "prompt": "Para que serve o link Pular para o conteúdo principal no topo de uma página web?",
+      "speechPrompt": "Questão 8. Para que serve o link Pular para o conteúdo principal no topo de uma página web?",
+      "options": [
+        { "key": "A", "shape": "triangle", "text": "Fechar a aba do navegador rapidamente", "speechText": "Opção A: Fechar a aba do navegador rapidamente" },
+        { "key": "B", "shape": "diamond", "text": "Permitir que usuários de teclado evitem percorrer menus repetitivos a cada tela", "speechText": "Opção B: Permitir que usuários de teclado evitem percorrer menus repetitivos a cada tela" },
+        { "key": "C", "shape": "circle", "text": "Traduzir a página para outro idioma", "speechText": "Opção C: Traduzir a página para outro idioma" },
+        { "key": "D", "shape": "square", "text": "Ativar o modo escuro do sistema operacional", "speechText": "Opção D: Ativar o modo escuro do sistema operacional" }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "q9",
+      "prompt": "Qual atributo no elemento html ajuda leitores de tela a usar a pronúncia e o idioma corretos?",
+      "speechPrompt": "Questão 9. Qual atributo no elemento html ajuda leitores de tela a usar a pronúncia e o idioma corretos?",
+      "options": [
+        { "key": "A", "shape": "triangle", "text": "charset", "speechText": "Opção A: charset" },
+        { "key": "B", "shape": "diamond", "text": "lang", "speechText": "Opção B: lang" },
+        { "key": "C", "shape": "circle", "text": "dir", "speechText": "Opção C: dir" },
+        { "key": "D", "shape": "square", "text": "role", "speechText": "Opção D: role" }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "q10",
+      "prompt": "Por que oferecer um modo Sem limite de tempo é importante em jogos educativos acessíveis?",
+      "speechPrompt": "Questão 10. Por que oferecer um modo Sem limite de tempo é importante em jogos educativos acessíveis?",
+      "options": [
+        { "key": "A", "shape": "triangle", "text": "Para reduzir o uso de memória RAM do navegador", "speechText": "Opção A: Para reduzir o uso de memória RAM do navegador" },
+        { "key": "B", "shape": "diamond", "text": "Para que pessoas que usam leitores de tela ou têm dificuldades motoras respondam sem pressão", "speechText": "Opção B: Para que pessoas que usam leitores de tela ou têm dificuldades motoras respondam sem pressão" },
+        { "key": "C", "shape": "circle", "text": "Porque cronômetros em JavaScript não funcionam no celular", "speechText": "Opção C: Porque cronômetros em JavaScript não funcionam no celular" },
+        { "key": "D", "shape": "square", "text": "Para impedir que o jogador ganhe pontos extras", "speechText": "Opção D: Para impedir que o jogador ganhe pontos extras" }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
