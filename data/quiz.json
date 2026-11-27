@@ -1,0 +1,172 @@
+{
+  "quizId": "mobile-a11y-2026",
+  "title": "Acessibilidade no Desenvolvimento Mobile",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Qual critério da WCAG 2.2 exige contraste mínimo de 4.5:1 para texto normal?",
+      "speechPrompt": "Questão 1. Qual critério da W C A G 2 ponto 2 exige contraste mínimo de 4 vírgula 5 para 1 para texto normal?",
+      "options": [
+        {
+          "key": "A",
+          "shape": "triangle",
+          "text": "1.4.3 — Contraste Mínimo (AA)",
+          "speechText": "Opção A: critério 1 ponto 4 ponto 3, Contraste Mínimo, nível duplo A",
+          "isCorrect": true
+        },
+        {
+          "key": "B",
+          "shape": "diamond",
+          "text": "2.1.1 — Teclado",
+          "speechText": "Opção B: critério 2 ponto 1 ponto 1, Teclado",
+          "isCorrect": false
+        },
+        {
+          "key": "C",
+          "shape": "circle",
+          "text": "2.2.1 — Tempo Ajustável",
+          "speechText": "Opção C: critério 2 ponto 2 ponto 1, Tempo Ajustável",
+          "isCorrect": false
+        },
+        {
+          "key": "D",
+          "shape": "square",
+          "text": "3.1.1 — Idioma da Página",
+          "speechText": "Opção D: critério 3 ponto 1 ponto 1, Idioma da Página",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Por que alternativas de quiz não devem depender apenas de cores para serem diferenciadas?",
+      "speechPrompt": "Questão 2. Por que alternativas de quiz não devem depender apenas de cores para serem diferenciadas?",
+      "options": [
+        {
+          "key": "A",
+          "shape": "triangle",
+          "text": "Porque telas OLED não exibem cores primárias corretamente",
+          "speechText": "Opção A: Porque telas OLED não exibem cores primárias corretamente",
+          "isCorrect": false
+        },
+        {
+          "key": "B",
+          "shape": "diamond",
+          "text": "Para atender pessoas com daltonismo e baixa visão (WCAG 1.4.1)",
+          "speechText": "Opção B: Para atender pessoas com daltonismo e baixa visão, critério W C A G 1 ponto 4 ponto 1",
+          "isCorrect": true
+        },
+        {
+          "key": "C",
+          "shape": "circle",
+          "text": "Porque leitores de tela leem apenas o código hexadecimal da cor",
+          "speechText": "Opção C: Porque leitores de tela leem apenas o código hexadecimal da cor",
+          "isCorrect": false
+        },
+        {
+          "key": "D",
+          "shape": "square",
+          "text": "Para economizar bateria em dispositivos móveis Android e iOS",
+          "speechText": "Opção D: Para economizar bateria em dispositivos móveis Android e i O S",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Qual tamanho mínimo de alvo de toque é recomendado para botões móveis acessíveis?",
+      "speechPrompt": "Questão 3. Qual tamanho mínimo de alvo de toque é recomendado para botões móveis acessíveis?",
+      "options": [
+        {
+          "key": "A",
+          "shape": "triangle",
+          "text": "16 por 16 pixels sem espaçamento",
+          "speechText": "Opção A: 16 por 16 pixels sem espaçamento",
+          "isCorrect": false
+        },
+        {
+          "key": "B",
+          "shape": "diamond",
+          "text": "20 por 20 pixels apenas no modo paisagem",
+          "speechText": "Opção B: 20 por 20 pixels apenas no modo paisagem",
+          "isCorrect": false
+        },
+        {
+          "key": "C",
+          "shape": "circle",
+          "text": "Pelo menos 48 por 48 pixels com espaçamento adequado",
+          "speechText": "Opção C: Pelo menos 48 por 48 pixels com espaçamento adequado",
+          "isCorrect": true
+        },
+        {
+          "key": "D",
+          "shape": "square",
+          "text": "100 por 100 pixels ocupando toda a largura da tela",
+          "speechText": "Opção D: 100 por 100 pixels ocupando toda a largura da tela",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Como regiões dinâmicas de feedback (live regions) devem ser preparadas no HTML para leitores de tela?",
+      "speechPrompt": "Questão 4. Como regiões dinâmicas de feedback, chamadas live regions, devem ser preparadas no H T M L para leitores de tela?",
+      "options": [
+        {
+          "key": "A",
+          "shape": "triangle",
+          "text": "Criadas via JavaScript somente no instante em que o erro ocorre",
+          "speechText": "Opção A: Criadas via JavaScript somente no instante em que o erro ocorre",
+          "isCorrect": false
+        },
+        {
+          "key": "B",
+          "shape": "diamond",
+          "text": "Ocultadas com display: none até o momento da leitura",
+          "speechText": "Opção B: Ocultadas com display none até o momento da leitura",
+          "isCorrect": false
+        },
+        {
+          "key": "C",
+          "shape": "circle",
+          "text": "Inseridas dentro da tag head com atributo aria-hidden",
+          "speechText": "Opção C: Inseridas dentro da tag head com atributo aria-hidden",
+          "isCorrect": false
+        },
+        {
+          "key": "D",
+          "shape": "square",
+          "text": "Existir no DOM desde o carregamento inicial, inicialmente vazias",
+          "speechText": "Opção D: Existir no DOM desde o carregamento inicial, inicialmente vazias",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "O que o critério WCAG 2.1.4 exige sobre atalhos de teclado de caractere único (como teclas 1 a 4)?",
+      "speechPrompt": "Questão 5. O que o critério W C A G 2 ponto 1 ponto 4 exige sobre atalhos de teclado de caractere único, como teclas 1 a 4?",
+      "options": [
+        {
+          "key": "A",
+          "shape": "triangle",
+          "text": "Que possam ser desligados ou fiquem ativos apenas quando o componente tem foco",
+          "speechText": "Opção A: Que possam ser desligados ou fiquem ativos apenas quando o componente tem foco",
+          "isCorrect": true
+        },
+        {
+          "key": "B",
+          "shape": "diamond",
+          "text": "Que funcionem globalmente em qualquer campo de texto da página",
+          "speechText": "Opção B: Que funcionem globalmente em qualquer campo de texto da página",
+          "isCorrect": false
+        },
+        {
+          "key": "C",
+          "shape": "circle",
+          "text": "Que sejam ativados automaticamente sem ação do usuário",
+          "speechText": "Opção C: Que sejam ativados automaticamente sem ação do usuário",
+          "isCorrect": false
+        },
+        {
+          "key

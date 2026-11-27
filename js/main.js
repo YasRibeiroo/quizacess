@@ -10,3 +10,12 @@ btnContrast.addEventListener('click', () => {
     btnContrast.setAttribute('aria-pressed', 'true');
   }
 });
+
+// Testa o carregamento e validação da Etapa E2
+loadAndValidateQuiz()
+  .then((quizData) => {
+    console.log('Quiz pronto:', quizData.title);
+  })
+  .catch((err) => {
+    console.error('❌ Erro na validação do quiz:', err.message);
+  });
