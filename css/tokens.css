@@ -1,23 +1,58 @@
 :root {
-  /* Tema Padrão (Contraste >= 4.5:1) */
-  --bg-color: #ffffff;
+  /* Tema Padrão (Contraste mínimo 4.5:1 - RNF01) */
+  --bg-color: #f8f9fa;
+  --surface-color: #ffffff;
   --text-color: #1a1a1a;
-  --primary-color: #005fcc;
+  --text-muted: #4a4a4a;
+  --primary-color: #0052cc;
   --primary-text: #ffffff;
   --border-color: #595959;
   --focus-outline: #d93800;
 
-  /* Acessibilidade tátil e espaçamento (RNF03) */
+  /* Cores distintas das 4 alternativas (combinadas com letra e forma - RNF02) */
+  --opt-a-bg: #fce8e6;
+  --opt-a-border: #b31412;
+  --opt-b-bg: #e8f0fe;
+  --opt-b-border: #174ea6;
+  --opt-c-bg: #fef7e0;
+  --opt-c-border: #8a5300;
+  --opt-d-bg: #e6f4ea;
+  --opt-d-border: #0d652d;
+
+  /* Feedback */
+  --success-bg: #e6f4ea;
+  --success-border: #0d652d;
+  --error-bg: #fce8e6;
+  --error-border: #b31412;
+
+  /* Medidas tácteis e espaçamento (RNF03) */
   --touch-target-min: 48px;
   --spacing-gap: 12px;
+  --radius: 8px;
 }
 
 [data-theme="high-contrast"] {
-  /* Tema Alto Contraste (Contraste >= 7:1) */
+  /* Tema Alto Contraste (Contraste mínimo 7:1 - RNF01) */
   --bg-color: #000000;
+  --surface-color: #000000;
   --text-color: #ffffff;
+  --text-muted: #f0f0f0;
   --primary-color: #ffff00;
   --primary-text: #000000;
   --border-color: #ffffff;
   --focus-outline: #00ffff;
+
+  --opt-a-bg: #000000;
+  --opt-a-border: #ffffff;
+  --opt-b-bg: #000000;
+  --opt-b-border: #ffffff;
+  --opt-c-bg: #000000;
+  --opt-c-border: #ffffff;
+  --opt-d-bg: #000000;
+  --opt-d-border: #ffffff;
+
+  --success-bg: #000000;
+  --success-border: #00ff00;
+  --error-bg: #000000;
+  --error-border: #ff5555;
 }

@@ -8,34 +8,137 @@
   <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-  <!-- Regiões de anúncio para leitores de tela (devem existir no DOM desde o início) -->
+  <!-- Regiões de anúncio (devem existir no DOM vazias desde o início) -->
   <div id="live-polite" class="sr-only" aria-live="polite" aria-atomic="true"></div>
   <div id="live-assertive" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
 
-  <header>
-    <button type="button" id="btn-contrast" aria-pressed="false">Alto Contraste</button>
+  <header class="app-header">
+    <div class="header-controls">
+      <button type="button" id="btn-contrast" aria-pressed="false">
+        Alto Contraste
+      </button>
+      <button type="button" id="btn-motion" aria-pressed="false">
+        Pausar Animações
+      </button>
+      <button type="button" id="btn-shortcuts" aria-pressed="true">
+        Atalhos: Ligados
+      </button>
+    </div>
   </header>
 
   <main id="app">
     <!-- TELA 1: CONFIGURAÇÃO -->
     <section id="screen-config" data-screen="CONFIG">
       <h1 tabindex="-1">Configurar Partida — QuizAccess</h1>
-      <form id="form-config">
-        <label for="input-nickname">Seu apelido:</label>
-        <input type="text" id="input-nickname" required placeholder="Ex: Maria">
+      <p class="subtitle">Quiz acessível com enunciado e alternativas na própria tela.</p>
 
-        <fieldset>
+      <form id="form-config" class="card">
+        <div class="field-group">
+          <label for="input-nickname">Seu apelido:</label>
+          <input type="text" id="input-nickname" required maxlength="20" placeholder="Ex: Maria" autocomplete="nickname">
+        </div>
+
+        <fieldset class="field-group">
           <legend>Modo de tempo:</legend>
-          <label><input type="radio" name="timeMode" value="standard" checked> Padrão (20s)</label>
-          <label><input type="radio" name="timeMode" value="extended"> Estendido 2x (40s)</label>
-          <label><input type="radio" name="timeMode" value="unlimited"> Sem limite</label>
+          <div class="radio-list">
+            <label class="radio-option">
+              <input type="radio" name="timeMode" value="standard" checked>
+              <span>Padrão (20s por questão + bônus de velocidade)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="timeMode" value="extended">
+              <span>Estendido 2x (40s por questão, sem pressão)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="timeMode" value="unlimited">
+              <span>Sem limite de tempo</span>
+            </label>
+          </div>
         </fieldset>
 
         <button type="submit" class="btn-primary">Começar</button>
       </form>
     </section>
 
-    <!-- As demais telas (LOBBY, QUESTÃO, FEEDBACK, PÓDIO) entrarão aqui -->
+    <!-- TELA 2: LOBBY -->
+    <section id="screen-lobby" data-screen="LOBBY" hidden>
+      <h1 tabindex="-1">Sala de Espera (Lobby)</h1>
+      <div class="card">
+        <p class="pin-box">PIN da sala: <strong id="lobby-pin">482 910</strong></p>
+        <h2>Participantes na sala</h2>
+        <ul id="lobby-players" class="player-list">
+          <!-- Preenchido via JS com o jogador e os 3 bots -->
+        </ul>
+        <button type="button" id="btn-start-quiz" class="btn-primary">Iniciar Questões</button>
+      </div>
+    </section>
+
+    <!-- TELA 3: QUESTÃO -->
+    <section id="screen-question" data-screen="QUESTÃO" hidden>
+      <div class="question-meta">
+        <span id="question-progress">Questão 1 de 5</span>
+        <span id="question-timer" class="timer-badge" aria-label="Tempo restante">20s</span>
+      </div>
+
+      <h1 id="question-prompt" tabindex="-1">Enunciado da questão aparecerá aqui</h1>
+
+      <div class="tts-bar">
+        <button type="button" id="btn-tts" class="btn-secondary">
+          Ouvir questão
+        </button>
+        <label for="select-tts-rate" class="sr-only">Velocidade da leitura</label>
+        <select id="select-tts-rate" aria-label="Velocidade da leitura em voz alta">
+          <option value="0.8">0.8x</option>
+          <option value="1" selected>1.0x</option>
+          <option value="1.5">1.5x</option>
+        </select>
+      </div>
+
+      <!-- Grupo de alternativas (atalhos 1-4 / A-D funcionam apenas com foco aqui dentro) -->
+      <div id="options-group" role="group" aria-labelledby="question-prompt" class="options-grid">
+        <button type="button" class="option-btn option-a" data-key="A" data-index="0">
+          <span class="option-badge" aria-hidden="true">▲ A</span>
+          <span class="option-text">Alternativa A</span>
+        </button>
+        <button type="button" class="option-btn option-b" data-key="B" data-index="1">
+          <span class="option-badge" aria-hidden="true">◆ B</span>
+          <span class="option-text">Alternativa B</span>
+        </button>
+        <button type="button" class="option-btn option-c" data-key="C" data-index="2">
+          <span class="option-badge" aria-hidden="true">● C</span>
+          <span class="option-text">Alternativa C</span>
+        </button>
+        <button type="button" class="option-btn option-d" data-key="D" data-index="3">
+          <span class="option-badge" aria-hidden="true">■ D</span>
+          <span class="option-text">Alternativa D</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- TELA 4: FEEDBACK -->
+    <section id="screen-feedback" data-screen="FEEDBACK" hidden>
+      <div id="feedback-box" class="card feedback-card">
+        <p id="feedback-status" class="feedback-title">
+          <span id="feedback-icon" aria-hidden="true">✔</span>
+          <span id="feedback-label">Resposta Correta!</span>
+        </p>
+        <p id="feedback-detail">Você ganhou +120 pontos.</p>
+        <p id="feedback-correct-answer" class="correct-answer-note"></p>
+      </div>
+
+      <button type="button" id="btn-next-question" class="btn-primary">Próxima</button>
+    </section>
+
+    <!-- TELA 5: PÓDIO -->
+    <section id="screen-podium" data-screen="PÓDIO" hidden>
+      <h1 id="podium-summary" tabindex="-1">Fim de Jogo — Pódio Final</h1>
+      <div class="card">
+        <ol id="podium-list" class="podium-list">
+          <!-- Ranking final preenchido via JS -->
+        </ol>
+        <button type="button" id="btn-restart" class="btn-primary">Jogar Novamente</button>
+      </div>
+    </section>
   </main>
 
   <script type="module" src="js/main.js"></script>
