@@ -1,12 +1,21 @@
 import { moveFocusTo } from './a11y.js';
 
 export const STATES = {
-  CONFIG: 'CONFIG',
-  LOBBY: 'LOBBY',
-  QUESTION: 'QUESTÃO',
-  FEEDBACK: 'FEEDBACK',
-  PODIUM: 'PÓDIO'
+  CONFIG: 'screen-config',
+  LOBBY: 'screen-lobby',
+  QUESTION: 'screen-question',
+  FEEDBACK: 'screen-feedback',
+  PODIUM: 'screen-podium'
 };
+
+export function transitionTo(targetScreenId) {
+  Object.values(STATES).forEach((screenId) => {
+    const el = document.getElementById(screenId);
+    if (!el) return;
+    const isTarget = screenId === targetScreenId;
+    el.hidden = !isTarget;
+  });
+}
 
 let currentState = STATES.CONFIG;
 const listeners = [];

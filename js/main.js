@@ -205,8 +205,23 @@ function showFeedback(result) {
   nextBtn.textContent = engine.hasNextQuestion() ? 'Próxima' : 'Ver Pódio';
 
   transitionTo(STATES.FEEDBACK);
-  // Único anúncio assertive do resultado (Seção 6)
   announce(announcementText, 'assertive');
+
+  if (nextBtn) {
+    nextBtn.disabled = false;
+    nextBtn.removeAttribute('tabindex');
+    nextBtn.textContent = engine.hasNextQuestion() ? 'Próxima' : 'Ver Pódio';
+  }
+
+  transitionTo(STATES.FEEDBACK);
+  announce(announcementText, 'assertive');
+
+  // Garante que o foco do teclado vá direto para o botão "Próxima"
+  if (nextBtn) {
+    requestAnimationFrame(() => {
+      nextBtn.focus();
+    });
+  }
 }
 
 // 8. Botão Próxima -> Próxima questão ou PÓDIO
