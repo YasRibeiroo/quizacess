@@ -1,6 +1,5 @@
 let audioCtx = null;
 
-// Deve ser chamado no primeiro gesto do usuário (clique em Começar)
 export function initAudio() {
   if (!audioCtx) {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
@@ -24,7 +23,6 @@ export function playFeedbackSound(isCorrect) {
   gain.connect(audioCtx.destination);
 
   if (isCorrect) {
-    // Som agradável ascendente (Dó5 -> Mi5)
     osc.type = 'sine';
     osc.frequency.setValueAtTime(523.25, now);
     osc.frequency.setValueAtTime(659.25, now + 0.12);
@@ -33,7 +31,6 @@ export function playFeedbackSound(isCorrect) {
     osc.start(now);
     osc.stop(now + 0.35);
   } else {
-    // Som grave de erro/tempo esgotado (Lá3 -> Fá3)
     osc.type = 'triangle';
     osc.frequency.setValueAtTime(220, now);
     osc.frequency.setValueAtTime(174.61, now + 0.15);
@@ -57,7 +54,6 @@ export function triggerVibration(isCorrect) {
   }
 }
 
-// --- Leitura em voz alta (TTS - RF04) ---
 let ptBrVoice = null;
 
 export function setupTTS(onAvailabilityChange) {
